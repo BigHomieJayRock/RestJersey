@@ -129,4 +129,13 @@ public class TodosResource {
         return Response.ok().entity("row " + id + " deleted").build();
     }
 	
+	static boolean validateUpdate(Todo existing, Todo update) {
+		//return true;
+		if (existing.getAssignee() == null && update.getAssignee() == null)
+			return true;
+		else
+		return update.getAssignee() != null;
+		
+	}
+	
 }
