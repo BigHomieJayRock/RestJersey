@@ -51,6 +51,9 @@ public class TodosResource {
 	//   HTTP method: GET
 	// Headers:
     //      Accept:  application/json   or application/xml
+	@GET
+	@Path("/{id}")
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public Todo getTodo(@PathParam("id") int id) {
 		// Retrieve a row from the todos table in the Derby database
 		// using the id passed by client via URL
@@ -120,7 +123,7 @@ public class TodosResource {
 	// Headers:
 	//      Accept: application/json
 	@DELETE
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
     public Response deleteTodo(@PathParam("id") int id) {
 		em.getTransaction().begin();
