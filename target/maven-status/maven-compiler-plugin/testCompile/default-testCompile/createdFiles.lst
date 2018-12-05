@@ -1,2 +1,3 @@
 org/morehouse/app/AppTest.class
 org/morehouse/app/JUnitTestTodos.class
+org/morehouse/app/resources/UpdateToDoTest.class
